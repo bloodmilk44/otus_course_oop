@@ -18,8 +18,26 @@ class Triangle(Figure):
         self.b = b
         self.c = c
 
-    def triangl_area(self, a, b ,c):
-        return self.a + self.b + self.c
+    def print_name(self):
+        print(Triangle.name)
+
+    def print_angles(self):
+        print(Triangle.angles)
+
+    def print_area(self):
+        a = int(self.a)
+        b = int(self.b)
+        c = int(self.c)
+        if a <= 0:
+            print('Сторона треугольника не может быть меньше или равна нулю')
+        elif b <= 0:
+            print('Сторона треугольника не может быть меньше или равна нулю')
+        elif c <= 0:
+            print('Сторона треугольника не может быть меньше или равна нулю')
+        else:
+            p = (a + b + c / 2)
+            s = round(math.sqrt(p), 2)
+            print(s)
 
 
 class Rectangle(Figure):
@@ -36,6 +54,8 @@ class Circle(Figure):
     angles = 0
     name = 'Circle'
 
-test = Triangle(10, 3, 4, 4 ,5)
-test_2 = Triangle.triangl_area
-print(test_2)
+
+triangle_2 = Triangle(6, 5, 20, name=Triangle, angles=3)
+triangle_2.print_area()
+triangle_2.print_name()
+triangle_2.print_angles()
