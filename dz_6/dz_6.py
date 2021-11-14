@@ -13,6 +13,7 @@ class Figure:
     def print_angles(self):
         return ("\nКоличество углов фигуры: " + str(self.angles))
 
+
 class Triangle(Figure):
     angles = 3
     name = 'Triangle'
@@ -37,7 +38,7 @@ class Triangle(Figure):
         else:
             p = (a + b + c / 2)
             s = round(math.sqrt(p), 2)
-            return ("\nПлощадь фигуры: " + str(s))
+            return s
 
     def print_perimeter(self):
         a = int(self.a)
@@ -84,7 +85,7 @@ class Rectangle(Figure):
             return ("\nСторона прямоугольника не может быть равна нулю")
         else:
             s = a * b
-            return ("\nПлощадь фигуры: " + str(s))
+            return s
 
     def sum_of_sides(self):
         a = int(self.a)
@@ -112,35 +113,25 @@ class Square(Figure):
     angles = 4
     name = 'Квадрат'
 
-    def __init__(self, a, b, c, d, name, angles):
+    def __init__(self, a, name, angles):
         super().__init__(name, angles)
         self.a = a
-        self.b = b
-        self.c = c
-        self.d = d
-
 
     def print_area(self):
         a = int(self.a)
-        b = int(self.b)
-        c = int(self.c)
-        d = int(self.d)
-        if a == b == c == d:
-            s = a * b
-            return ("\nПлощадь фигуры: " + str(s))
+        if a > 0:
+            s = a * a
+            return s
         else:
-            return ("\nВсе стороны квадрата должны быть равны")
+            return ("\nСторона квадрата не может быть равна нулю")
 
     def sum_of_sides(self):
         a = int(self.a)
-        b = int(self.b)
-        c = int(self.c)
-        d = int(self.d)
-        if a == b == c == d:
-            p = a + b + c + d
+        if a > 0:
+            p = a + a + a + a
             return ("\nПериметр фигуры: " + str(p))
         else:
-            return ("\nВсе стороны квадрата должны быть равны")
+            return ("\nСторона квадрата не может быть равна нулю")
 
 
 
@@ -157,7 +148,7 @@ class Circle(Figure):
         p = int(self.p)
         if p > 0:
             s = p_digit * (p ** 2) / 4
-            return ("\nПлощадь фигуры: " + str(s))
+            return s
         else:
             return ("Периметр не может быть равен нулю")
 
@@ -174,10 +165,7 @@ class Circle(Figure):
 
 triangle = Triangle(6, 5, 20, name=Triangle.name, angles=Triangle.angles)
 rectangle = Rectangle(6, 6, 7, 7, name=Rectangle.name, angles=Rectangle.angles)
-square = Square(6, 6, 6, 6, name = Square.name, angles = Square.angles)
+square = Square(6, name = Square.name, angles = Square.angles)
 circle = Circle(name=Circle.name, angles=Circle.angles, p = 5)
 
 
-print(circle.print_name())
-print(circle.print_angles())
-print(rectangle.print_angles())
