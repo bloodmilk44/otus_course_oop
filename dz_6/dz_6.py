@@ -7,6 +7,11 @@ class Figure:
         self.name = name
         self.angles = angles
 
+    def print_name(self):
+        return ("\nНазвание фигуры: " + self.name)
+
+    def print_angles(self):
+        return ("\nКоличество углов фигуры: " + str(self.angles))
 
 class Triangle(Figure):
     angles = 3
@@ -18,11 +23,6 @@ class Triangle(Figure):
         self.b = b
         self.c = c
 
-    def print_name(self):
-        return ("\nНазвание фигуры: " + Triangle.name)
-
-    def print_angles(self):
-        return ("\nКоличество углов фигуры: " + str(Triangle.angles))
 
     def print_area(self):
         a = int(self.a)
@@ -108,13 +108,6 @@ class Rectangle(Figure):
             return ("\nПериметр фигуры: " + str(p))
 
 
-    def print_name(self):
-        return ("\nНазвание фигуры: " + Rectangle.name)
-
-    def print_angles(self):
-        return ("\nКоличество сторон фигуры: " + str(Rectangle.angles))
-
-
 class Square(Figure):
     angles = 4
     name = 'Квадрат'
@@ -149,11 +142,6 @@ class Square(Figure):
         else:
             return ("\nВсе стороны квадрата должны быть равны")
 
-    def print_name(self):
-        return ("\nНазвание фигуры: " + Square.name)
-
-    def print_angles(self):
-        return ("\nКоличество сторон фигуры: " + str(Square.angles))
 
 
 class Circle(Figure):
@@ -182,11 +170,6 @@ class Circle(Figure):
         else:
             return ("\nПериметр не может быть равен нулю")
 
-    def print_name(self):
-        return ("\nНазвание фигуры: " + Circle.name)
-
-    def print_angles(self):
-        return ("\nКоличество сторон фигуры :" + str(Circle.angles))
 
 
 triangle = Triangle(6, 5, 20, name=Triangle.name, angles=Triangle.angles)
@@ -195,7 +178,6 @@ square = Square(6, 6, 6, 6, name = Square.name, angles = Square.angles)
 circle = Circle(name=Circle.name, angles=Circle.angles, p = 5)
 
 
-#print(triangle.print_name(), triangle.print_angles())
-#print(rectangle.print_name(), rectangle.print_angles(), rectangle.print_area())
-#print(square.print_name(), square.print_angles(), square.print_area(), square.sum_of_sides())
-print(circle.print_angles(), circle.print_name(), circle.print_area(), circle.print_circumference())
+print(circle.print_name())
+print(circle.print_angles())
+print(rectangle.print_angles())
