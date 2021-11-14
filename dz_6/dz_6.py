@@ -1,6 +1,5 @@
 import math
 
-
 class Figure:
 
     def __init__(self, name, angles):
@@ -8,10 +7,10 @@ class Figure:
         self.angles = angles
 
     def print_name(self):
-        return ("\nНазвание фигуры: " + self.name)
+        return self.name
 
     def print_angles(self):
-        return ("\nКоличество углов фигуры: " + str(self.angles))
+        return self.angles
 
 
 class Triangle(Figure):
@@ -167,5 +166,7 @@ triangle = Triangle(6, 5, 20, name=Triangle.name, angles=Triangle.angles)
 rectangle = Rectangle(6, 6, 7, 7, name=Rectangle.name, angles=Rectangle.angles)
 square = Square(6, name = Square.name, angles = Square.angles)
 circle = Circle(name=Circle.name, angles=Circle.angles, p = 5)
+
+print(triangle.print_area())
 
 
