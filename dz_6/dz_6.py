@@ -1,5 +1,6 @@
 import math
 
+
 class Figure:
 
     def __init__(self, name, angles):
@@ -22,7 +23,6 @@ class Triangle(Figure):
         self.a = a
         self.b = b
         self.c = c
-
 
     def print_area(self):
         a = int(self.a)
@@ -58,30 +58,21 @@ class Rectangle(Figure):
     angles = 4
     name = 'Rectangle'
 
-    def __init__(self, a, b, c, d, name, angles):
+    def __init__(self, a, b, name, angles):
         super().__init__(name, angles)
         self.a = a
         self.b = b
-        self.c = c
-        self.d = d
 
     def print_area(self):
         a = int(self.a)
         b = int(self.b)
-        c = int(self.c)
-        d = int(self.d)
-        if a == c:
-            print("У прямоугольника сторона 'a' и сторона 'c' не должны быть равны" )
-        elif b == d:
-            print("У прямоугольника сторона 'b' и сторона 'd' не должны быть равны")
+
+        if a == b:
+            return ("У прямоугольника сторона 'a' и сторона 'b' не должны быть равны")
         elif a == 0:
-            print("Сторона прямоугольника не может быть равна нулю")
+            return ("Сторона прямоугольника не может быть равна нулю")
         elif b == 0:
-            print("Сторона прямоугольника не может быть равна нулю")
-        elif c == 0:
-            print("Сторона прямоугольника не может быть равна нулю")
-        elif d == 0:
-            return ("\nСторона прямоугольника не может быть равна нулю")
+            return ("Сторона прямоугольника не может быть равна нулю")
         else:
             s = a * b
             return s
@@ -89,22 +80,15 @@ class Rectangle(Figure):
     def sum_of_sides(self):
         a = int(self.a)
         b = int(self.b)
-        c = int(self.c)
-        d = int(self.d)
-        if a == c:
-            print("У прямоугольника сторона 'a' и сторона 'c' не должны быть равны")
-        elif b == d:
-            print("У прямоугольника сторона 'b' и сторона 'd' не должны быть равны")
+
+        if a == b:
+            return ("У прямоугольника сторона 'a' и сторона 'c' не должны быть равны")
         elif a == 0:
-            print("Сторона прямоугольника не может быть равна нулю")
+            return ("Сторона прямоугольника не может быть равна нулю")
         elif b == 0:
-            print("Сторона прямоугольника не может быть равна нулю")
-        elif c == 0:
-            print("Сторона прямоугольника не может быть равна нулю")
-        elif d == 0:
-            return ("\nСторона прямоугольника не может быть равна нулю")
+            return ("Сторона прямоугольника не может быть равна нулю")
         else:
-            p = a + b + c + d
+            p = a + b + a + b
             return ("\nПериметр фигуры: " + str(p))
 
 
@@ -131,7 +115,6 @@ class Square(Figure):
             return ("\nПериметр фигуры: " + str(p))
         else:
             return ("\nСторона квадрата не может быть равна нулю")
-
 
 
 class Circle(Figure):
@@ -161,12 +144,10 @@ class Circle(Figure):
             return ("\nПериметр не может быть равен нулю")
 
 
-
 triangle = Triangle(6, 5, 20, name=Triangle.name, angles=Triangle.angles)
-rectangle = Rectangle(6, 6, 7, 7, name=Rectangle.name, angles=Rectangle.angles)
-square = Square(6, name = Square.name, angles = Square.angles)
-circle = Circle(name=Circle.name, angles=Circle.angles, p = 5)
+rectangle = Rectangle(6, 7, name=Rectangle.name, angles=Rectangle.angles)
+square = Square(6, name=Square.name, angles=Square.angles)
+circle = Circle(name=Circle.name, angles=Circle.angles, p=5)
 
 print(triangle.print_area())
-
-
+print(rectangle.print_area())
