@@ -2,7 +2,7 @@ import pytest
 from dz_6.dz_6 import Triangle, Rectangle, Square, Circle
 
 triangle = Triangle(6, 5, 20, name=Triangle.name, angles=Triangle.angles)
-rectangle = Rectangle(6, 6, 7, 7, name=Rectangle.name, angles=Rectangle.angles)
+rectangle = Rectangle(6, 7, name=Rectangle.name, angles=Rectangle.angles)
 square = Square(6, name=Square.name, angles=Square.angles)
 circle = Circle(name=Circle.name, angles=Circle.angles, p=5)
 
@@ -16,7 +16,7 @@ def test_triangle():
 def test_rectangle():
     assert rectangle.print_name() == Rectangle.name
     assert rectangle.print_angles() == Rectangle.angles
-    assert rectangle.print_area() == 36
+    assert rectangle.print_area() == 42
     assert rectangle.print_angles() == 4
 
 def test_square():
